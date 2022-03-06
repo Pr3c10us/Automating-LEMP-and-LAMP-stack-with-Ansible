@@ -1,0 +1,8 @@
+---
+# handlers file for Automating_LEMP_LAMP_Stack
+#
+- name: Enable packages
+  service:
+    name: "{{ item }}"
+    enabled: yes
+  loop: "{{ service_names }}"

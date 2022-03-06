@@ -1,0 +1,28 @@
+---
+# tasks file for Automating_LEMP_LAMP_Stack
+#
+#
+- name: Update repository cache
+  apt:
+    update_cache: yes
+
+- name: Install php,nginx and apache2 packages
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ stack_packages }}"
+
+- name: Use pip to install PyMySQL
+  pip:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ pip_installation }}"
+
+- name: Start all services
+  service:
+    name: "{{ item }}"
+    state: started
+  loop: "{{ service_names }}"
+  notify: Enable packages
+
+

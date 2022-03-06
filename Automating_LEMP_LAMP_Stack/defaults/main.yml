@@ -1,0 +1,16 @@
+---
+# defaults file for Automating_LEMP_LAMP_Stack
+#
+stack_packages:
+  - php-fpm
+  - nginx
+  - apache2
+  - mysql-server
+
+service_names: 
+  - nginx
+  - mysql
+
+pip_installation:
+  - PyMySQL
+  

@@ -1,0 +1,8 @@
+---
+
+- name: Automating packages for LEMP and LAMP stack
+  hosts: localhost
+  become: True
+
+  roles:
+    - { role: Automating_LEMP_LAMP_Stack }
